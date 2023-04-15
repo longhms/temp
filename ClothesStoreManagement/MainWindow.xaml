@@ -1,0 +1,540 @@
+﻿<Window
+    x:Class="ClothesStoreManagement.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ClothesStoreManagement"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Trang Chủ"
+    Width="800"
+    Height="450"
+    ContentRendered="Window_ContentRendered"
+    Loaded="Window_Loaded"
+    ResizeMode="CanMinimize"
+    SizeToContent="WidthAndHeight"
+    mc:Ignorable="d">
+    <Grid
+        x:Name="grid"
+        Width="800"
+        Height="450">
+        <DataGrid
+            x:Name="dataView"
+            Margin="10,222,10,10"
+            d:ItemsSource="{d:SampleData ItemCount=2}"
+            CanUserResizeColumns="False"
+            IsReadOnly="True"
+            SelectionChanged="dataView_SelectionChanged" />
+        <ComboBox
+            Name="comboBoxSelectTable"
+            Width="120"
+            Margin="639,185,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            SelectionChanged="comboBoxSelectTable_SelectionChanged" />
+        <Label
+            Name="labelChooseTable"
+            Margin="565,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Chọn Bảng" />
+        <TextBox
+            Name="textboxMaChatLieu"
+            Width="120"
+            Height="25"
+            Margin="120,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            Name="labelMaChatLieu"
+            Margin="34,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Chất Liệu"
+            FontWeight="DemiBold" />
+        <TextBox
+            Name="textboxTenChatLieu"
+            Width="120"
+            Height="25"
+            Margin="378,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            Name="labelTenChatLieu"
+            Margin="291,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Tên Chất Liệu" />
+        <TextBox
+            x:Name="textboxMaKhach"
+            Width="120"
+            Height="25"
+            Margin="639,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelMaKhach"
+            Margin="570,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Khách"
+            FontWeight="DemiBold" />
+        <TextBox
+            x:Name="textboxMaHang"
+            Width="120"
+            Height="25"
+            Margin="120,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelMaHang"
+            Margin="55,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Hàng"
+            FontWeight="DemiBold" />
+        <TextBox
+            x:Name="textboxDonGia"
+            Width="120"
+            Height="25"
+            Margin="378,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelDonGia"
+            Margin="320,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Đơn Giá" />
+        <TextBox
+            x:Name="textboxGiamGia"
+            Width="120"
+            Height="25"
+            Margin="639,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelGiamGia"
+            Margin="576,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Giảm Giá" />
+        <TextBox
+            x:Name="textboxThanhTien"
+            Width="120"
+            Height="25"
+            Margin="639,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelThanhTien"
+            Margin="566,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Thành Tiền" />
+        <TextBox
+            x:Name="textboxMaHDBan"
+            Width="120"
+            Height="25"
+            Margin="120,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            Name="labelMaHDBan"
+            Margin="36,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Hoá Đơn"
+            FontWeight="DemiBold" />
+        <TextBox
+            x:Name="textboxSoLuong"
+            Width="120"
+            Height="25"
+            Margin="378,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelSoLuong"
+            Margin="313,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Số Lượng" />
+        <TextBox
+            x:Name="textboxMaNhanVien"
+            Width="120"
+            Height="25"
+            Margin="378,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="textboxNgayBan"
+            Width="120"
+            Height="25"
+            Margin="120,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelNgayBan"
+            Margin="53,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Ngày Bán" />
+        <Label
+            x:Name="labelMaNhanVien"
+            Margin="285,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Nhân Viên"
+            FontWeight="DemiBold" />
+        <TextBox
+            x:Name="textboxTongTien"
+            Width="120"
+            Height="25"
+            Margin="378,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelTongTien"
+            Margin="310,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Tổng Tiền" />
+        <TextBox
+            x:Name="textboxMaKhachHang"
+            Width="120"
+            Height="25"
+            Margin="120,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelMaKhachHang"
+            Margin="19,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Khách Hàng"
+            FontWeight="DemiBold" />
+        <Label
+            x:Name="labelTenKhachHang"
+            Margin="277,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Tên Khách Hàng" />
+        <TextBox
+            x:Name="textboxTenKhachHang"
+            Width="120"
+            Height="25"
+            Margin="378,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelSDTKH"
+            Margin="603,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="SĐT" />
+        <TextBox
+            x:Name="textboxSDTKH"
+            Width="120"
+            Height="25"
+            Margin="639,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelDiaChiKH"
+            Margin="67,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Địa Chỉ" />
+        <TextBox
+            x:Name="textboxDiaChiKH"
+            Width="639"
+            Height="25"
+            Margin="120,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelTenNhanVien"
+            Margin="28,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Tên Nhân Viên" />
+        <TextBox
+            x:Name="textboxTenNhanVien"
+            Width="120"
+            Height="25"
+            Margin="120,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelDiaChiNV"
+            Margin="67,130,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Địa Chỉ" />
+        <TextBox
+            x:Name="textboxDiaChiNV"
+            Width="639"
+            Height="25"
+            Margin="120,130,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelSDTNV"
+            Margin="603,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="SĐT" />
+        <TextBox
+            x:Name="textboxSDTNV"
+            Width="120"
+            Height="25"
+            Margin="639,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelGioiTinh"
+            Margin="57,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Giới Tính" />
+        <TextBox
+            x:Name="textboxGioiTinh"
+            Width="120"
+            Height="25"
+            Margin="120,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelNgaySinh"
+            Margin="309,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Ngày Sinh" />
+        <TextBox
+            x:Name="textboxNgaySinh"
+            Width="120"
+            Height="25"
+            Margin="378,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelMaSanPham"
+            Margin="30,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Mã Sản Phẩm"
+            FontWeight="DemiBold" />
+        <TextBox
+            x:Name="textboxMaSanPham"
+            Width="120"
+            Height="25"
+            Margin="120,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelTenSanPham"
+            Margin="289,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Tên Sản Phẩm" />
+        <TextBox
+            x:Name="textboxTenSanPham"
+            Width="120"
+            Height="25"
+            Margin="378,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelGhiChu"
+            Margin="62,130,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Ghi Chú" />
+        <TextBox
+            x:Name="textboxGhiChu"
+            Width="639"
+            Height="25"
+            Margin="120,130,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelDonGiaNhap"
+            Margin="549,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Đơn Giá Nhập" />
+        <TextBox
+            x:Name="textboxDonGiaNhap"
+            Width="120"
+            Height="25"
+            Margin="639,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="labelDonGiaBan"
+            Margin="558,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Đơn Giá Bán" />
+        <TextBox
+            x:Name="textboxDonGiaBan"
+            Width="120"
+            Height="25"
+            Margin="639,75,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            TextWrapping="Wrap" />
+        <Button
+            Name="buttonDelete"
+            Width="64"
+            Margin="424,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="ActionButton_Click"
+            Content="Xóa" />
+        <Button
+            x:Name="buttonModify"
+            Width="64"
+            Margin="237,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="ActionButton_Click"
+            Content="Sửa" />
+        <Button
+            x:Name="buttonInsert"
+            Width="64"
+            Margin="49,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="ActionButton_Click"
+            Content="Thêm" />
+        <Button
+            x:Name="buttonConfirm"
+            Width="64"
+            Margin="142,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="EditingButton_Click"
+            Content="Xác Nhận" />
+        <Button
+            x:Name="buttonCancel"
+            Width="64"
+            Margin="330,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="EditingButton_Click"
+            Content="Hủy" />
+        <Button
+            x:Name="buttonReconnect"
+            Width="64"
+            Margin="493,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="buttonReconnect_Click"
+            Content="Kết Nối" />
+    </Grid>
+</Window>
