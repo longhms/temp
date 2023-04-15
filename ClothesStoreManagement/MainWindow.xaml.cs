@@ -119,6 +119,7 @@ namespace ClothesStoreManagement {
                     break;
             }
         }
+//dau buoii
 
         private void EditingButton_Click( object sender, RoutedEventArgs e ) {
             if (((Button) sender).Name == "buttonConfirm") {
